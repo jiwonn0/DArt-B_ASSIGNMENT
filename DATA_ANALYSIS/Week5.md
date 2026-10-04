@@ -84,20 +84,20 @@ https://www.youtube.com/watch?v=deYY4xHsI0o&list=PLVsNizTWUw7FGzSRCkQrPEEe-ljVXg
 
 import matplotlib.pyplot as plt
 
-# 데이터 정의
+### 데이터 정의
 x = [1, 2, 3, 4, 5]
 y = [2, 4, 6, 8, 10]
 
-# 마커(marker='o')를 포함한 선그래프 그리기
+### 마커(marker='o')를 포함한 선그래프 그리기
 plt.plot(x, y, marker='o')
 
-# 제목 설정
+### 제목 설정
 plt.title("Linear Trend")
 
-# x축 이름 설정
+### x축 이름 설정
 plt.xlabel("X values")
 
-# y축 이름 설정
+### y축 이름 설정
 plt.ylabel("Y values")
 
 plt.show()
