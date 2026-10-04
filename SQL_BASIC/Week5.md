@@ -152,14 +152,15 @@ STATUS = 'RESERVED' → '예약중'
 
 풀이 과정:
 
-```
-- GROUP BY 기준:
-- 평균을 계산한 방식:
-- HAVING에 사용한 조건:
-- 처음 헷갈렸던 점:
-```
+- GROUP BY 기준: CAR_ID (자동차 ID별로 대여 기간 평균을 구해야 하므로)
 
-<!-- 정답을 맞추게 되면, 정답입니다. 이 부분을 캡처해서 이 주석을 지우시고 첨부해주시면 됩니다. -->
+- 평균을 계산한 방식: ROUND(AVG(DATEDIFF(END_DATE, START_DATE) + 1), 1) (대여 시작일도 1일로 포함하기 위해 + 1을 한 뒤, 평균을 내고 소수점 둘째 자리에서 반올림하여 소수 첫째 자리까지 표시)
+
+- HAVING에 사용한 조건: HAVING AVERAGE_DURATION >= 7 (또는 HAVING AVG(DATEDIFF(END_DATE, START_DATE) + 1) >= 7, 평균 대여 기간이 7일 이상인 그룹만 필터링)
+
+- 처음 헷갈렸던 점: 대여 기간을 계산할 때 단순 차이(END_DATE - START_DATE)만 구하면 당일 대여/반납이 0일이 되어버려 반드시 + 1을 더해준 뒤 AVG를 구해야 한다는 점
+
+![alt text](image-19.png)
 
 ---
 
